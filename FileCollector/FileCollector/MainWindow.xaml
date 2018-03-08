@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileCollector"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="550" Width="600" ResizeMode="NoResize">
+    <Border Padding="10">
+        <StackPanel>
+            <TextBlock Margin="0 0 0 3" FontWeight="Bold" Text="Source" />
+            <Grid Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Padding="2" IsReadOnly="true" Background="#eee"></TextBox>
+                <Button x:Name="btnSource" Margin="10 0 0 0"  Grid.Column="1" Content="Open folder" Click="btnSource_Click" />
+            </Grid>
+            <TextBlock Margin="0 0 0 3" FontWeight="Bold" Text="Destination" />
+            <Grid Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Padding="2" IsReadOnly="true" Background="#eee"></TextBox>
+                <Button x:Name="btnDestination" Margin="10 0 0 0"  Grid.Column="1" Content="Open folder" Click="btnDestination_Click" />
+            </Grid>
+            <TextBlock Margin="0 0 0 3" FontWeight="Bold" Text="Filetypes" />
+            <StackPanel Margin="0 0 0 10">
+                <CheckBox Content="mkv" Margin="2"/>
+                <CheckBox Content="avi" Margin="2"/>
+                <CheckBox Content="mp4" Margin="2" />
+            </StackPanel>
+            <Button x:Name="btnCollect" Content="Collect" Margin="0 0 0 10" Height="30" Click="btnCollect_Click" />
+            <TextBlock FontWeight="Bold" Text="Log" Margin="0 0 0 3"/>
+            <TextBox IsReadOnly="true" Background="#eee" Height="253"/>
+        </StackPanel>
+    </Border>
 </Window>

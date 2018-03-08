@@ -24,5 +24,20 @@ namespace FileCollector
         {
             InitializeComponent();
         }
+
+        private void btnSource_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDestination_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCollect_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
