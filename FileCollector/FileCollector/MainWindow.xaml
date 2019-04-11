@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileCollector"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="600" ResizeMode="NoResize">
+        Title="FileCollector" Height="550" Width="600" ResizeMode="NoResize">
     <Border Padding="10">
         <StackPanel>
             <TextBlock Margin="0 0 0 3" FontWeight="Bold" Text="Source" />
@@ -14,7 +14,7 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0" Padding="2" IsReadOnly="true" Background="#eee"></TextBox>
+                <TextBox x:Name="txtSource" Padding="2" IsReadOnly="true" Background="#eee"></TextBox>
                 <Button x:Name="btnSource" Margin="10 0 0 0"  Grid.Column="1" Content="Open folder" Click="btnSource_Click" />
             </Grid>
             <TextBlock Margin="0 0 0 3" FontWeight="Bold" Text="Destination" />
@@ -23,18 +23,18 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0" Padding="2" IsReadOnly="true" Background="#eee"></TextBox>
+                <TextBox x:Name="txtDestination" Padding="2" IsReadOnly="true" Background="#eee"></TextBox>
                 <Button x:Name="btnDestination" Margin="10 0 0 0"  Grid.Column="1" Content="Open folder" Click="btnDestination_Click" />
             </Grid>
             <TextBlock Margin="0 0 0 3" FontWeight="Bold" Text="Filetypes" />
             <StackPanel Margin="0 0 0 10">
-                <CheckBox Content="mkv" Margin="2"/>
-                <CheckBox Content="avi" Margin="2"/>
-                <CheckBox Content="mp4" Margin="2" />
+                <CheckBox x:Name="mkv"  Content="mkv" Margin="2" Checked="Mkv_Checked" Unchecked="Mkv_Unchecked" />
+                <CheckBox x:Name="avi" Content="avi" Margin="2" Checked="Avi_Checked" Unchecked="Avi_Unchecked"/>
+                <CheckBox x:Name="mp4" Content="mp4" Margin="2" Checked="Mp4_Checked" Unchecked="Mp4_Unchecked"/>
             </StackPanel>
-            <Button x:Name="btnCollect" Content="Collect" Margin="0 0 0 10" Height="30" Click="btnCollect_Click" />
+            <Button x:Name="btnCollect" Content="Collect" Margin="0 0 0 10" Height="30" Click="btnCollect_Click" IsEnabled="False" />
             <TextBlock FontWeight="Bold" Text="Log" Margin="0 0 0 3"/>
-            <TextBox IsReadOnly="true" Background="#eee" Height="253"/>
+            <TextBox x:Name="txtLog" Background="#eee" Height="253"/>
         </StackPanel>
     </Border>
 </Window>
